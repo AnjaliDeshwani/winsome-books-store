@@ -1,0 +1,135 @@
+.main-cart-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--light-gray-color);
+  width: 100%;
+}
+
+/***** Cart Product Stylings *****/
+
+.cart-product-section {
+  box-shadow: 0 0 4px 0px var(--dark-gray-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-product-section .cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 1.2rem;
+}
+
+.cart-header .deliver-section {
+  display: inline-flex;
+  align-items: center;
+}
+
+.deliver-section .deliver-location {
+  padding-left: 1rem;
+}
+
+.deliver-location .location-dropdown {
+  padding: 12px 10px;
+  border: 1px solid var(--dark-gray-color);
+}
+.product-conatiner {
+  margin: 1rem 1.2rem;
+}
+.cart-item {
+  display: flex;
+  gap: 2rem;
+}
+.cart-item .item-image {
+  width: 8rem;
+}
+
+.cart-item .item-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.cart-item .item-subtitle {
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+}
+.cart-options {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: 12rem;
+}
+
+.cart-options .link-btn {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.cart-bottom {
+  margin: 1rem 1.2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-bottom .primary-btn-solid {
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+}
+
+/***** Cart Pricing Stylings *****/
+
+.price-detail-section {
+  box-shadow: 0 0 4px 0px var(--dark-gray-color);
+  max-height: 17rem;
+}
+
+.price-detail-header {
+  margin: 1rem 1.2rem;
+}
+
+.price-detail-header .text-grey {
+  text-transform: uppercase;
+}
+
+.price-deatil-body {
+  margin: 1rem 1.2rem;
+}
+
+.price-deatil-body .price-div > * {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.items-discount .right-detai {
+  color: var(--red-color);
+}
+
+.price-deatil-body .total-price-div {
+  border-top: 1px dotted var(--dark-gray-color);
+  border-bottom: 1px dotted var(--dark-gray-color);
+}
+
+.price-deatil-body .total-price-div .total-amt {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.price-detail-footer {
+  margin: 1rem 1.2rem;
+}
+
+.price-detail-footer .footer-note {
+  color: var(--primary-color);
+}

@@ -1,0 +1,46 @@
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 24rem;
+  padding: 2rem;
+  box-shadow: 0 0 4px 0px var(--dark-gray-color);
+}
+
+.auth-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.auth-body .auth-items.checkbox-item {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.auth-body .auth-items.signup-item {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.auth-body .auth-items .btn {
+  width: 100%;
+}
+
+.auth-body .auth-link {
+  color: var(--dark-blue-color);
+}
+
+.auth-items .input-txt {
+  border: 1px solid var(--dark-gray-color);
+}

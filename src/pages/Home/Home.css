@@ -1,0 +1,85 @@
+.slider-section {
+  padding: 1rem 2rem;
+  height: 80vh;
+  width: 100%;
+}
+
+.slider-section .image-container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.slider-section .image-container .bg-image {
+  background-image: url(https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.slider-section .image-container .caption {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  color: var(--white-color);
+}
+.slider-section .image-container .caption .btn {
+  display: flex;
+  margin: auto;
+  padding: 1.2rem 2rem;
+  transition: transform 0.2s;
+}
+
+.slider-section .image-container .caption .btn:hover {
+  transform: scale(1.1);
+}
+
+.main-section {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+}
+
+.main-section .main-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.main-section .main-container .content-wrapper {
+  box-shadow: 0 0 1px 1px var(--light-gray-color);
+}
+
+.main-section .main-container .content-wrapper .content-heading {
+  color: var(--primary-color);
+  padding: 4px 8px;
+}
+
+.main-section .main-container .content-wrapper .content-heading:hover {
+  color: var(--black-color);
+}
+
+.main-section .main-container .content-wrapper .content-block {
+  display: flex;
+  gap: 10rem;
+  box-shadow: 0 0 1px 1px var(--light-gray-color);
+  background-color: #f8fafc;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+.content-block .card .content-img {
+  display: block;
+  transition: transform 0.3s;
+}
+
+.content-block .card .content-img:hover {
+  transform: scale(1.1);
+}
+
+.main-section .main-container .content-wrapper .btn {
+  margin: 0.5rem;
+}

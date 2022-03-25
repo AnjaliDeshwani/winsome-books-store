@@ -1,0 +1,23 @@
+.main-products-section {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.products-section {
+  flex-grow: 1;
+  overflow: auto;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.product-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.card-head .image-badge-div .product-image {
+  height: 20rem;
+}
