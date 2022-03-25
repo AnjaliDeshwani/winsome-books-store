@@ -1,7 +1,7 @@
 import "./App.css";
 import { Home, ProductList, Wishlist, Cart, Login, SignUp } from "./pages";
 import { Header, Footer } from "./components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Routes, Route } from "react-router-dom";
 
 function App() {
   return (
