@@ -1,5 +1,5 @@
 import "./Footer.css";
-const Footer = () => {
+export const Footer = () => {
   return (
     <>
       <footer className="footer">
@@ -18,7 +18,6 @@ const Footer = () => {
               <i className="fa-brands fa-github"></i>
             </a>
           </div>
-
           <div className="footer-icons">
             <a
               href="https://twitter.com/anjali_deshwani"
@@ -44,5 +43,3 @@ const Footer = () => {
     </>
   );
 };
-
-export default Footer;

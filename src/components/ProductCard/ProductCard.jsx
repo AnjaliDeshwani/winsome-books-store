@@ -1,4 +1,4 @@
-const ProductCard = () => {
+export const ProductCard = () => {
   return (
     <div className="card ecomm-card">
       <div className="card-head">
@@ -29,5 +29,3 @@ const ProductCard = () => {
     </div>
   );
 };
-
-export default ProductCard;

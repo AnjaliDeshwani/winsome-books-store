@@ -1,6 +1,6 @@
 import "./Wishlist.css";
 
-const Wishlist = () => {
+export const Wishlist = () => {
   return (
     <>
       <main className="wishlist-section">
@@ -75,5 +75,3 @@ const Wishlist = () => {
     </>
   );
 };
-
-export default Wishlist;

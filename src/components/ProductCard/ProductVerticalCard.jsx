@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const ProductVerticalCard = () => {
+export const ProductVerticalCard = () => {
   return (
     <>
       <div className="content-field">
@@ -16,5 +16,3 @@ const ProductVerticalCard = () => {
     </>
   );
 };
-
-export default ProductVerticalCard;

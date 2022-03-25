@@ -1,5 +1,5 @@
 import "./Filters.css";
-const Filters = () => {
+export const Filters = () => {
   return (
     <div className="filter-section">
       <div className="filter-block">
@@ -84,5 +84,3 @@ const Filters = () => {
     </div>
   );
 };
-
-export default Filters;

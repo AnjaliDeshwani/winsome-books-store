@@ -1,7 +1,7 @@
 import "./ProductList.css";
 import { Filters, ProductCard } from "../../components";
 
-const ProductList = () => {
+export const ProductList = () => {
   return (
     <>
       <main className="main-products-section">
@@ -23,5 +23,3 @@ const ProductList = () => {
     </>
   );
 };
-
-export default ProductList;

@@ -2,7 +2,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import { ProductVerticalCard } from "../../components";
 
-const Home = () => {
+export const Home = () => {
   const showProduct = () => [...Array(4)].map(() => <ProductVerticalCard />);
 
   return (
@@ -58,5 +58,3 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;

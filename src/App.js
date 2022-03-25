@@ -1,4 +1,5 @@
 import "./App.css";
+import "./responsive.css";
 import { Home, ProductList, Wishlist, Cart, Login, SignUp } from "./pages";
 import { Header, Footer } from "./components";
 import { Routes, Route } from "react-router-dom";

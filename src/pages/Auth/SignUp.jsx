@@ -1,7 +1,7 @@
 import "./Auth.css";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+export const SignUp = () => {
   return (
     <>
       <main className="auth-section">
@@ -44,5 +44,3 @@ const SignUp = () => {
     </>
   );
 };
-
-export default SignUp;

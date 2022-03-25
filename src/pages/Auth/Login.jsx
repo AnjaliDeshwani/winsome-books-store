@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Auth.css";
-const Login = () => {
+export const Login = () => {
   return (
     <>
       <main className="auth-section">
@@ -45,5 +45,3 @@ const Login = () => {
     </>
   );
 };
-
-export default Login;

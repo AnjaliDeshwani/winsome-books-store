@@ -1,6 +1,6 @@
 import "./Cart.css";
 
-const Cart = () => {
+export const Cart = () => {
   return (
     <>
       <main className="main-cart-section">
@@ -117,5 +117,3 @@ const Cart = () => {
     </>
   );
 };
-
-export default Cart;
