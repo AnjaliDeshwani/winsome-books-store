@@ -14,7 +14,7 @@ const Wishlist = () => {
               <img
                 className="responsive-img"
                 src="../assets/Book1.jpg"
-                alt="product-image"
+                alt="product"
               />
             </div>
             <div className="item-details">
@@ -45,7 +45,7 @@ const Wishlist = () => {
               <img
                 className="responsive-img"
                 src="../assets/Book3.jpg"
-                alt="product-image"
+                alt="product"
               />
             </div>
             <div className="item-details">

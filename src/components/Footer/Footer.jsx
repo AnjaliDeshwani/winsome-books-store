@@ -12,6 +12,7 @@ const Footer = () => {
             <a
               href="https://github.com/AnjaliDeshwani"
               target="_blank"
+              rel="noreferrer"
               className="footer-link"
             >
               <i className="fa-brands fa-github"></i>
@@ -22,6 +23,7 @@ const Footer = () => {
             <a
               href="https://twitter.com/anjali_deshwani"
               target="_blank"
+              rel="noreferrer"
               className="footer-link"
             >
               <i className="fa-brands fa-twitter"></i>
@@ -31,6 +33,7 @@ const Footer = () => {
             <a
               href="https://www.linkedin.com/in/anjalideshwani/"
               target="_blank"
+              rel="noreferrer"
               className="footer-link"
             >
               <i className="fa-brands fa-linkedin-in"></i>

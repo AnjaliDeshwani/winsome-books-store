@@ -28,7 +28,7 @@ const Cart = () => {
                 <img
                   className="responsive-img"
                   src="../assets/Book1.jpg"
-                  alt="product-image"
+                  alt="product"
                 />
               </div>
               <div className="item-details">
@@ -54,7 +54,7 @@ const Cart = () => {
                 <img
                   className="responsive-img"
                   src="../assets/Book4.jpg"
-                  alt="product-image"
+                  alt="product"
                 />
               </div>
               <div className="item-details">
