@@ -20,10 +20,11 @@
   text-transform: uppercase;
 }
 
-.filter-block .filter-price,
-.filter-block .filter-category,
-.filter-block .filter-ratings,
-.filter-block .filter-text {
-  padding: 16px;
+.filter-block .filter-type {
+  padding: 16px 0;
   border-bottom: 1px solid #f0f0f0;
+}
+
+.stacked-list li {
+  margin: 0.7rem 1rem;
 }
