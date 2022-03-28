@@ -14,7 +14,7 @@ export const Ratings = () => {
               <input
                 type="radio"
                 name="rating"
-                checked={productState.rating == rating}
+                checked={Number(productState.rating) === rating}
                 value={rating}
                 onChange={(e) => {
                   productDispatch({
