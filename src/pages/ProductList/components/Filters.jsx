@@ -4,7 +4,7 @@ import { useProduct } from "../../../context/product-context";
 import { CLEAR_ALL } from "../../../utils/constants";
 
 export const Filters = () => {
-  const { productState, productDispatch } = useProduct();
+  const { productDispatch } = useProduct();
   return (
     <div className="filter-section">
       <div className="filter-block">
