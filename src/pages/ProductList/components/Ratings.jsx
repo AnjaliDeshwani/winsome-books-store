@@ -16,7 +16,7 @@ export const Ratings = () => {
                 name="rating"
                 checked={Number(productState.rating) === rating}
                 value={rating}
-                onChange={(e) => {
+                onMouseUp={(e) => {
                   productDispatch({
                     type: RATING_CHANGE,
                     payload: e.target.value,
