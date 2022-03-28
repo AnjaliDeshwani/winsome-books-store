@@ -1,7 +1,10 @@
 import "./ProductList.css";
-import { Filters, ProductCard } from "../../components";
+import { Filters, ProductCard } from "./components";
+import { useFilterHook } from "../../Hooks/FilterHooks";
 
 export const ProductList = () => {
+  const { filteredData } = useFilterHook();
+
   return (
     <>
       <main className="main-products-section">
@@ -10,12 +13,12 @@ export const ProductList = () => {
           <h3 className="product-heading">
             Showing Products
             <span className="product-heading-small text-grey text-regular">
-              (Showing 1 – 20 products of 20 products)
+              (Showing {filteredData.length} of all products)
             </span>
           </h3>
           <div className="product-list-grid">
-            {[...Array(5)].map(() => (
-              <ProductCard />
+            {filteredData.map((product) => (
+              <ProductCard product={product} key={product._id} />
             ))}
           </div>
         </div>
