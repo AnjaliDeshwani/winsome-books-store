@@ -57,3 +57,12 @@
 .header .navbar .nav-list .nav-item {
   padding: 12px 16px;
 }
+
+.badge-wrapper {
+  margin-right: 10px;
+}
+
+.badge-count {
+  top: -13px;
+  background-color: var(--white-color);
+}

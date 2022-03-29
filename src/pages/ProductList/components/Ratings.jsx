@@ -22,6 +22,7 @@ export const Ratings = () => {
                     payload: e.target.value,
                   });
                 }}
+                readOnly
               />
               {rating} ★ & above
             </label>
