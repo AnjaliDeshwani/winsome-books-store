@@ -67,7 +67,7 @@ export const Wishlist = () => {
                         </div>
                       </div>
                     </div>
-                    <div class="border-bottom"></div>
+                    <div className="border-bottom"></div>
                   </div>
                 );
               })}
