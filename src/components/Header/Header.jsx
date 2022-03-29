@@ -1,8 +1,11 @@
 import "./Header.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import { useProduct } from "../../context/product-context";
 
 export const Header = () => {
+  const { productState } = useProduct();
+  const { wishlist } = productState;
   return (
     <>
       <header className="header">
@@ -28,7 +31,7 @@ export const Header = () => {
             <ul className="list spaced-list">
               <li className="nav-item">
                 <Link to="/login">
-                  <span>
+                  <span className="badge-wrapper">
                     <i className="fas fa-user"></i>
                   </span>
                   <span>Login</span>
@@ -36,15 +39,20 @@ export const Header = () => {
               </li>
               <li className="nav-item">
                 <Link to="/wishlist">
-                  <span>
+                  <span className="badge-wrapper">
                     <i className="fas fa-heart"></i>
+                    {wishlist.length > 0 && (
+                      <span className="badge-count red-badge">
+                        {wishlist.length}
+                      </span>
+                    )}
                   </span>
                   <span>Wishlist</span>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/cart">
-                  <span>
+                  <span className="badge-wrapper">
                     <i className="fas fa-shopping-cart"></i>
                   </span>
                   <span>Cart</span>

@@ -6,9 +6,12 @@ import {
   SORT_BY,
   RATING_CHANGE,
   CLEAR_ALL,
+  REMOVE_FROM_WISHLIST,
+  ADD_TO_WISHLIST,
 } from "../utils/constants";
 let initialData = [];
 let categoryData = {};
+let updatedWishlist = [];
 export const productReducer = (productState, action) => {
   switch (action.type) {
     case INITIAL_DATA:
@@ -66,6 +69,19 @@ export const productReducer = (productState, action) => {
         selectedCategory: categoryData,
         sortBy: "",
         rating: "",
+      };
+
+    case REMOVE_FROM_WISHLIST:
+      updatedWishlist = productState.wishlist.filter(
+        (wishItem) => wishItem._id !== action.payload._id
+      );
+      return { ...productState, wishlist: updatedWishlist };
+
+    case ADD_TO_WISHLIST:
+      updatedWishlist = [...productState.wishlist, action.payload];
+      return {
+        ...productState,
+        wishlist: updatedWishlist,
       };
 
     default:

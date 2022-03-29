@@ -21,3 +21,9 @@
 .card-head .image-badge-div .product-image {
   height: 20rem;
 }
+
+.liked {
+  transform: scale(1.1);
+  color: var(--red-color);
+  opacity: 1;
+}

@@ -1,76 +1,79 @@
 import "./Wishlist.css";
+import { useProduct } from "../../context/product-context";
+import { getDiscountPercent, removeFromWishlist } from "../../utils";
 
 export const Wishlist = () => {
+  const { productState, productDispatch } = useProduct();
+  const { wishlist } = productState;
   return (
     <>
       <main className="wishlist-section">
-        <div className="wishlist-header">
-          <h3>My Wishlist</h3>
-        </div>
-        <div className="border-bottom"></div>
-        <div className="wishlist-items-container">
-          <div className="wishlist-item">
-            <div className="item-image">
-              <img
-                className="responsive-img"
-                src="../assets/Book1.jpg"
-                alt="product"
-              />
+        {!wishlist.length ? (
+          <div className="empty-info">
+            Empty Wishlist. You have no items in your wishlist. Start adding!
+          </div>
+        ) : (
+          <div>
+            <div className="wishlist-header">
+              <h3>My Wishlist {wishlist.length}</h3>
             </div>
-            <div className="item-details">
-              <div className="item-title">Good Vibes, Good Life</div>
-              <div className="item-subtitle">By Vex King</div>
-              <div className="card-price">
-                <span className="price-now"> ₹769</span>
-                <span className="price-before"> ₹855</span>
-                <span className="discount">10%</span>
-              </div>
-            </div>
-            <div className="action-items">
-              <div className="move-to-cart">
-                <button className="btn primary-btn-outline">
-                  Move To Cart
-                </button>
-              </div>
-              <div className="delete-item">
-                <span className="delete-icon">
-                  <i className="fa-solid fa-trash"></i>
-                </span>
-              </div>
+            <div className="border-bottom"></div>
+            <div className="wishlist-items-container">
+              {wishlist.map((product) => {
+                return (
+                  <div>
+                    <div className="wishlist-item" key={product._id}>
+                      <div className="item-image">
+                        <img
+                          className="responsive-img"
+                          src={product.img}
+                          alt="product"
+                        />
+                      </div>
+                      <div className="item-details">
+                        <div className="item-title">{product.title}</div>
+                        <div className="item-subtitle">By {product.author}</div>
+                        <div className="card-price">
+                          <span className="price-now">
+                            {" "}
+                            ₹{product.discountedPrice}
+                          </span>
+                          <span className="price-before">₹{product.price}</span>
+                          <span className="discount">
+                            {" "}
+                            {getDiscountPercent(
+                              product.price,
+                              product.discountedPrice
+                            )}
+                            %
+                          </span>
+                        </div>
+                      </div>
+                      <div className="action-items">
+                        <div className="move-to-cart">
+                          <button className="btn primary-btn-outline">
+                            Move To Cart
+                          </button>
+                        </div>
+                        <div
+                          className="delete-item"
+                          onClick={() =>
+                            removeFromWishlist(product, productDispatch)
+                          }
+                        >
+                          <span className="delete-icon">
+                            <i className="fa-solid fa-trash"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-bottom"></div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-          <div className="border-bottom"></div>
-          <div className="wishlist-item">
-            <div className="item-image">
-              <img
-                className="responsive-img"
-                src="../assets/Book3.jpg"
-                alt="product"
-              />
-            </div>
-            <div className="item-details">
-              <div className="item-title">The Little Prince</div>
-              <div className="item-subtitle">By Antoine</div>
-              <div className="card-price">
-                <span className="price-now"> ₹769</span>
-                <span className="price-before"> ₹855</span>
-                <span className="discount">10%</span>
-              </div>
-            </div>
-            <div className="action-items">
-              <div className="move-to-cart">
-                <button className="btn primary-btn-outline">
-                  Move To Cart
-                </button>
-              </div>
-              <div className="delete-item">
-                <span className="delete-icon">
-                  <i className="fa-solid fa-trash"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        )}
       </main>
     </>
   );
