@@ -25,8 +25,8 @@ export const CartProduct = () => {
                   <div className="item-title">{title}</div>
                   <div className="item-subtitle">{author}</div>
                   <div className="card-price">
-                    <span className="price-now">₹{discountedPrice}</span>
-                    <span className="price-before"> ₹{price}</span>
+                    <span className="price-now">₹{discountedPrice * qty}</span>
+                    <span className="price-before"> ₹{price * qty}</span>
                     <span className="discount">
                       {getDiscountPercent(
                         product.price,
@@ -36,7 +36,7 @@ export const CartProduct = () => {
                     </span>
                   </div>
                   <div className="coupon-details font-bold">
-                    1 coupon & 2 offers applied
+                    No coupons & offers applied
                   </div>
                 </div>
                 <div className="delivery-info font-bold">

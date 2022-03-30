@@ -13,9 +13,12 @@ export const Cart = () => {
           <div className="empty-info">
             Your cart is empty! Add items to it now.
           </div>
-          <button className="btn primary-btn-solid">
-            <Link to="/product-list">Shop Now</Link>
-          </button>
+          <Link
+            className="btn primary-btn-solid text-center"
+            to="/product-list"
+          >
+            Shop Now
+          </Link>
         </div>
       ) : (
         <main className="main-cart-section">

@@ -86,7 +86,11 @@ export const productReducer = (productState, action) => {
       return { ...productState, wishlist: updatedWishlist };
 
     case ADD_TO_WISHLIST:
-      updatedWishlist = [...productState.wishlist, action.payload];
+      updatedWishlist = productState.wishlist.find(
+        (wishItem) => wishItem._id === action.payload._id
+      )
+        ? [...productState.wishlist]
+        : [...productState.wishlist, action.payload];
       return {
         ...productState,
         wishlist: updatedWishlist,
@@ -99,9 +103,7 @@ export const productReducer = (productState, action) => {
       updatedCart =
         cartItemIndex === -1
           ? [...productState.cart, { ...action.payload, qty: 1 }]
-          : productState.cart.map((item, index) =>
-              index === cartItemIndex ? { ...item, qty: item.qty + 1 } : item
-            );
+          : [...productState.cart];
       return {
         ...productState,
         cart: updatedCart,
