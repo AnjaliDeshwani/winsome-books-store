@@ -5,7 +5,7 @@ import { useProduct } from "../../context/product-context";
 
 export const Header = () => {
   const { productState } = useProduct();
-  const { wishlist } = productState;
+  const { wishlist, cart } = productState;
   return (
     <>
       <header className="header">
@@ -54,6 +54,11 @@ export const Header = () => {
                 <Link to="/cart">
                   <span className="badge-wrapper">
                     <i className="fas fa-shopping-cart"></i>
+                    {cart.length > 0 && (
+                      <span className="badge-count red-badge">
+                        {cart.length}
+                      </span>
+                    )}
                   </span>
                   <span>Cart</span>
                 </Link>

@@ -1,6 +1,10 @@
 import "./Wishlist.css";
 import { useProduct } from "../../context/product-context";
-import { getDiscountPercent, removeFromWishlist } from "../../utils";
+import {
+  getDiscountPercent,
+  removeFromWishlist,
+  moveToCart,
+} from "../../utils";
 
 export const Wishlist = () => {
   const { productState, productDispatch } = useProduct();
@@ -21,8 +25,8 @@ export const Wishlist = () => {
             <div className="wishlist-items-container">
               {wishlist.map((product) => {
                 return (
-                  <div>
-                    <div className="wishlist-item" key={product._id}>
+                  <div key={product._id}>
+                    <div className="wishlist-item">
                       <div className="item-image">
                         <img
                           className="responsive-img"
@@ -51,7 +55,10 @@ export const Wishlist = () => {
                       </div>
                       <div className="action-items">
                         <div className="move-to-cart">
-                          <button className="btn primary-btn-outline">
+                          <button
+                            className="btn primary-btn-outline"
+                            onClick={() => moveToCart(product, productDispatch)}
+                          >
                             Move To Cart
                           </button>
                         </div>

@@ -13,6 +13,7 @@ const ProductProvider = ({ children }) => {
     sortBy: "",
     rating: "",
     wishlist: [],
+    cart: [],
   });
 
   useEffect(() => {

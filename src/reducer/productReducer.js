@@ -8,10 +8,18 @@ import {
   CLEAR_ALL,
   REMOVE_FROM_WISHLIST,
   ADD_TO_WISHLIST,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  INC_QTY,
+  DEC_QTY,
 } from "../utils/constants";
+
 let initialData = [];
 let categoryData = {};
 let updatedWishlist = [];
+let updatedCart = [];
+let cartItemIndex;
+
 export const productReducer = (productState, action) => {
   switch (action.type) {
     case INITIAL_DATA:
@@ -78,10 +86,59 @@ export const productReducer = (productState, action) => {
       return { ...productState, wishlist: updatedWishlist };
 
     case ADD_TO_WISHLIST:
-      updatedWishlist = [...productState.wishlist, action.payload];
+      updatedWishlist = productState.wishlist.find(
+        (wishItem) => wishItem._id === action.payload._id
+      )
+        ? [...productState.wishlist]
+        : [...productState.wishlist, action.payload];
       return {
         ...productState,
         wishlist: updatedWishlist,
+      };
+
+    case ADD_TO_CART:
+      cartItemIndex = productState.cart.findIndex(
+        (cartItem) => cartItem._id === action.payload._id
+      );
+      updatedCart =
+        cartItemIndex === -1
+          ? [...productState.cart, { ...action.payload, qty: 1 }]
+          : [...productState.cart];
+      return {
+        ...productState,
+        cart: updatedCart,
+      };
+
+    case REMOVE_FROM_CART:
+      updatedCart = productState.cart.filter(
+        (cartItem) => cartItem._id !== action.payload._id
+      );
+      return {
+        ...productState,
+        cart: updatedCart,
+      };
+
+    case INC_QTY:
+      updatedCart = productState.cart.map((cartItem) =>
+        cartItem._id === action.payload._id
+          ? { ...cartItem, qty: cartItem.qty + 1 }
+          : cartItem
+      );
+
+      return {
+        ...productState,
+        cart: updatedCart,
+      };
+
+    case DEC_QTY:
+      updatedCart = productState.cart.map((cartItem) =>
+        cartItem._id === action.payload._id
+          ? { ...cartItem, qty: cartItem.qty - 1 }
+          : cartItem
+      );
+      return {
+        ...productState,
+        cart: updatedCart,
       };
 
     default:
