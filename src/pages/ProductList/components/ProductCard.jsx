@@ -44,9 +44,6 @@ export const ProductCard = ({ product }) => {
             {getDiscountPercent(product.price, product.discountedPrice)}%
           </span>
         </div>
-        {/* <button className="btn primary-btn-solid">
-            <Link to="/cart">Go to Cart</Link>
-          </button> */}
         {inCart ? (
           <Link className="btn primary-btn-solid text-center" to="/cart">
             Go to Cart
