@@ -23,11 +23,11 @@ $ npm start
 
 ## Built with -
 
-React JS
-React Context API + useReducer
-React Router v6
-Vanilla CSS integrated with Winsome UI
+- React JS
+- React Context API + useReducer
+- React Router v6
+- Vanilla CSS integrated with Winsome UI
 
 ## Demo Video
 
-![](https://github.com/AnjaliDeshwani/winsome-books/blob/dev/assets/Ecomm-demo.gif)
+![](https://github.com/AnjaliDeshwani/winsome-books-store/blob/dev/src/assets/Ecomm-demo.gif)
