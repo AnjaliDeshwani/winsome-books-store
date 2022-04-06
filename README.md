@@ -5,7 +5,7 @@ You will find the world’s great literature here, it is an e-commerce site with
 ## How to install and run locally ?
 
 ```
-$ git clone https://github.com/muskaanshah/reactecomm.git
+$ git clone https://github.com/AnjaliDeshwani/winsome-books-store.git
 $ npm install
 $ npm start
 
