@@ -1,6 +1,14 @@
 import "./App.css";
 import "./responsive.css";
-import { Home, ProductList, Wishlist, Cart, Login, SignUp } from "./pages";
+import {
+  Home,
+  ProductList,
+  Wishlist,
+  Cart,
+  Login,
+  SignUp,
+  PageNotFound,
+} from "./pages";
 import { Header, Footer } from "./components";
 import { Routes, Route } from "react-router-dom";
 import Mockman from "mockman-js";
@@ -18,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/mock" element={<Mockman />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
       <Footer />

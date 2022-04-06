@@ -14,7 +14,7 @@ export const products = [
     price: "399",
     discountedPrice: "359",
     rating: "3.5",
-    categoryName: "non-fiction",
+    categoryName: "Non-Fiction",
   },
   {
     _id: uuid(),
@@ -24,7 +24,7 @@ export const products = [
     price: "350",
     discountedPrice: "310",
     rating: "3",
-    categoryName: "non-fiction",
+    categoryName: "Non-Fiction",
   },
   {
     _id: uuid(),
@@ -34,7 +34,7 @@ export const products = [
     price: "900",
     discountedPrice: "850",
     rating: "4",
-    categoryName: "non-fiction",
+    categoryName: "Non-Fiction",
   },
   {
     _id: uuid(),
@@ -44,7 +44,7 @@ export const products = [
     price: "700",
     discountedPrice: "450",
     rating: "2",
-    categoryName: "non-fiction",
+    categoryName: "Non-Fiction",
   },
   {
     _id: uuid(),
@@ -54,7 +54,7 @@ export const products = [
     price: "1000",
     discountedPrice: "870",
     rating: "1",
-    categoryName: "fiction",
+    categoryName: "Fiction",
   },
   {
     _id: uuid(),
@@ -64,7 +64,7 @@ export const products = [
     price: "399",
     discountedPrice: "280",
     rating: "5",
-    categoryName: "fiction",
+    categoryName: "Fiction",
   },
   {
     _id: uuid(),
@@ -74,7 +74,7 @@ export const products = [
     price: "500",
     discountedPrice: "450",
     rating: "4.5",
-    categoryName: "fiction",
+    categoryName: "Fiction",
   },
   {
     _id: uuid(),
@@ -84,7 +84,7 @@ export const products = [
     price: "695",
     discountedPrice: "600",
     rating: "2",
-    categoryName: "fiction",
+    categoryName: "Fiction",
   },
   {
     _id: uuid(),
@@ -94,7 +94,7 @@ export const products = [
     price: "525",
     discountedPrice: "450",
     rating: "4",
-    categoryName: "kids",
+    categoryName: "Kids",
   },
   {
     _id: uuid(),
@@ -104,7 +104,7 @@ export const products = [
     price: "425",
     discountedPrice: "300",
     rating: "3",
-    categoryName: "kids",
+    categoryName: "Kids",
   },
   {
     _id: uuid(),
@@ -114,7 +114,7 @@ export const products = [
     price: "405",
     discountedPrice: "340",
     rating: "3",
-    categoryName: "kids",
+    categoryName: "Kids",
   },
   {
     _id: uuid(),
@@ -124,6 +124,6 @@ export const products = [
     price: "778",
     discountedPrice: "699",
     rating: "1",
-    categoryName: "kids",
+    categoryName: "Kids",
   },
 ];

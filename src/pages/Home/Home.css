@@ -11,6 +11,8 @@
   position: relative;
 }
 .slider-section .image-container .bg-image {
+  position: absolute;
+  z-index: 1;
   background-image: url(https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
   background-repeat: no-repeat;
   height: 100%;
@@ -18,8 +20,17 @@
   background-size: cover;
 }
 
+.slider-section .image-container .bg-overlay {
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .slider-section .image-container .caption {
   position: absolute;
+  z-index: 3;
   top: 40%;
   left: 5%;
   color: var(--white-color);
@@ -56,6 +67,7 @@
 .main-section .main-container .content-wrapper .content-heading {
   color: var(--primary-color);
   padding: 4px 8px;
+  cursor: pointer;
 }
 
 .main-section .main-container .content-wrapper .content-heading:hover {
