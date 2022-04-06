@@ -10,7 +10,7 @@ You will find the world’s great literature here, it is an e-commerce site with
 - Cart Management with Add to Cart, Remove from Cart, Increase qauntity of Cart Item
 - Wishlist Management with Add to Wishlist, Remove from Wishlist
 
-....tune in for more features
+...tune in for more features
 
 ## Demo
 
