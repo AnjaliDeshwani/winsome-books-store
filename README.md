@@ -2,6 +2,15 @@
 
 You will find the world’s great literature here, it is an e-commerce site with wide variety of books.
 
+## How to install and run locally ?
+
+```
+$ git clone https://github.com/muskaanshah/reactecomm.git
+$ npm install
+$ npm start
+
+```
+
 ## Features Added
 
 - Home Page with Listed Categories
@@ -12,6 +21,13 @@ You will find the world’s great literature here, it is an e-commerce site with
 
 ...tune in for more features
 
-## Demo
+## Built with -
+
+React JS
+React Context API + useReducer
+React Router v6
+Vanilla CSS integrated with Winsome UI
+
+## Demo Video
 
 ![](https://github.com/AnjaliDeshwani/winsome-books/blob/dev/assets/Ecomm-demo.gif)
