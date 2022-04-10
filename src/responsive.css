@@ -13,7 +13,7 @@
     grid-template-columns: 1fr;
   }
   .main-section .main-container .content-wrapper .content-block {
-    gap: 5rem;
+    gap: 2rem;
   }
   .navbar-brand-heading {
     font-size: 1rem;
@@ -76,7 +76,7 @@
     line-height: 2.5rem;
   }
   .main-section .main-container .content-wrapper .content-block {
-    gap: 5rem;
+    gap: 1rem;
     padding: 1rem;
     margin: 0rem auto;
   }

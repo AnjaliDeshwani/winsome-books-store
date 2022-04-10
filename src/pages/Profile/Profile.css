@@ -1,0 +1,28 @@
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  box-shadow: 0 0 4px 0px var(--dark-gray-color);
+}
+
+.profile-section .profile-header {
+  margin: 1rem 1.2rem;
+}
+
+.profile-section .profile-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1rem 1.2rem;
+}
+
+.profile-body .profile-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-body .logout-btn {
+  margin-left: auto;
+}
