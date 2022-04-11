@@ -21,7 +21,7 @@ export const Login = () => {
     if (token) {
       navigate(location?.state?.from.pathname || "/", { replace: true });
     }
-  }, [token]);
+  });
   return (
     <>
       <main className="auth-section">
@@ -60,6 +60,7 @@ export const Login = () => {
                   />
                 </div>
               </div>
+              {/* Will add below features later */}
               {/* <div className="auth-items checkbox-item">
                 <div className="select-input">
                   <input type="checkbox" className="remember-checkbox" />

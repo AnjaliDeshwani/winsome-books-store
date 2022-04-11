@@ -28,7 +28,7 @@ export const SignUp = () => {
     if (token) {
       navigate(location?.state?.from.pathname || "/", { replace: true });
     }
-  }, [token]);
+  });
   return (
     <>
       <main className="auth-section">
