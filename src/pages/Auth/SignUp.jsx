@@ -75,7 +75,7 @@ export const SignUp = () => {
                 <div className="input-group">
                   <label className="input-label">Email</label>
                   <input
-                    type="text"
+                    type="email"
                     className="input-txt"
                     onChange={(e) =>
                       setSignUpForm({ ...signUpForm, email: e.target.value })
