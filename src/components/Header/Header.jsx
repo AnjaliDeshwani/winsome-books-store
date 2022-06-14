@@ -2,10 +2,12 @@ import "./Header.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { useProduct } from "../../context/product-context";
+import { useAuth } from "../../context/auth-context";
 
 export const Header = () => {
   const { productState } = useProduct();
   const { wishlist, cart } = productState;
+  const { token, loginUser } = useAuth();
   return (
     <>
       <header className="header">
@@ -30,12 +32,21 @@ export const Header = () => {
           <div className="nav-list">
             <ul className="list spaced-list">
               <li className="nav-item">
-                <Link to="/login">
-                  <span className="badge-wrapper">
-                    <i className="fas fa-user"></i>
-                  </span>
-                  <span>Login</span>
-                </Link>
+                {!token ? (
+                  <Link to="/login">
+                    <span className="badge-wrapper">
+                      <i className="fas fa-user"></i>
+                    </span>
+                    <span>Login</span>
+                  </Link>
+                ) : (
+                  <Link to="/profile">
+                    <span className="badge-wrapper">
+                      <i className="fa-solid fa-user-large"></i>
+                    </span>
+                    <span>Hi, {loginUser.firstName}</span>
+                  </Link>
+                )}
               </li>
               <li className="nav-item">
                 <Link to="/wishlist">
