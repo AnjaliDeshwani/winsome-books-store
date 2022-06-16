@@ -58,3 +58,15 @@
 .auth-body .auth-error {
   color: var(--red-color);
 }
+
+.password-icon {
+  position: absolute;
+  cursor: pointer;
+  right: 5px;
+  bottom: 10px;
+  margin-right: 5px;
+}
+
+.password-div {
+  position: relative;
+}

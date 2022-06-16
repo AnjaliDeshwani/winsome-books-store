@@ -1,19 +1,27 @@
+import { Link } from "react-router-dom";
 import { useProduct } from "../../../context/product-context";
 import {
   getDiscountPercent,
   removeFromCart,
   moveToWishlist,
+  updateCartItem,
 } from "../../../utils";
-import { INC_QTY, DEC_QTY } from "../../../utils/constants";
+import { useAuth } from "../../../context/auth-context";
 
 export const CartProduct = () => {
   const { productState, productDispatch } = useProduct();
-  const { cart } = productState;
+  const { wishlist, cart } = productState;
+  const { token } = useAuth();
+  const updateQtyHandler = (productId, actionType) =>
+    updateCartItem(productId, productDispatch, actionType, token);
+
   return (
     <div className="cart-items-container">
       {cart.map((product) => {
         const { img, title, author, discountedPrice, price, qty } = product;
-
+        const inWishlist = wishlist.find(
+          (wishlistItem) => wishlistItem._id === product._id
+        );
         return (
           <div key={product._id}>
             <div className="product-conatiner">
@@ -48,12 +56,7 @@ export const CartProduct = () => {
                 <div className="quantity">
                   <button
                     className="quantity-btn"
-                    onClick={() =>
-                      productDispatch({
-                        type: DEC_QTY,
-                        payload: product,
-                      })
-                    }
+                    onClick={() => updateQtyHandler(product._id, "DEC_QTY")}
                     disabled={qty === 1}
                   >
                     -
@@ -61,26 +64,31 @@ export const CartProduct = () => {
                   <span className="qantity-value">{qty}</span>
                   <button
                     className="quantity-btn"
-                    onClick={() =>
-                      productDispatch({
-                        type: INC_QTY,
-                        payload: product,
-                      })
-                    }
+                    onClick={() => updateQtyHandler(product._id, "INC_QTY")}
                   >
                     +
                   </button>
                 </div>
                 <div className="cart-actions">
+                  {inWishlist ? (
+                    <Link className="link-btn" to="/wishlist">
+                      Already in Wishlist
+                    </Link>
+                  ) : (
+                    <div
+                      className="link-btn"
+                      onClick={() =>
+                        moveToWishlist(product, productDispatch, token)
+                      }
+                    >
+                      Add to Wishlist
+                    </div>
+                  )}
                   <div
                     className="link-btn"
-                    onClick={() => moveToWishlist(product, productDispatch)}
-                  >
-                    Add to Wishlist
-                  </div>
-                  <div
-                    className="link-btn"
-                    onClick={() => removeFromCart(product, productDispatch)}
+                    onClick={() =>
+                      removeFromCart(product._id, productDispatch, token)
+                    }
                   >
                     Remove
                   </div>

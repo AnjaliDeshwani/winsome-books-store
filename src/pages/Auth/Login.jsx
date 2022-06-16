@@ -2,16 +2,21 @@ import "./Auth.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../context/auth-context";
+import { useShowPassword } from "../../Hooks/useShowPassword";
 
 export const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { token, loginHandler, authError } = useAuth();
   const [loginCred, setLoginCred] = useState({ email: "", password: "" });
+
   const guestLoginCred = {
     email: "test@gmail.com",
     password: "test@123",
   };
+
+  const { showPass, togglePassword } = useShowPassword();
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
     loginHandler(loginCred.email, loginCred.password);
@@ -22,6 +27,7 @@ export const Login = () => {
       navigate(location?.state?.from.pathname || "/", { replace: true });
     }
   });
+
   return (
     <>
       <main className="auth-section">
@@ -47,10 +53,10 @@ export const Login = () => {
                 </div>
               </div>
               <div className="auth-items">
-                <div className="input-group">
+                <div className="input-group password-div">
                   <label className="input-label">Password</label>
                   <input
-                    type="password"
+                    type={`${showPass ? "text" : "password"}`}
                     className="input-txt"
                     value={loginCred.password}
                     onChange={(e) =>
@@ -58,6 +64,13 @@ export const Login = () => {
                     }
                     required
                   />
+                  <span className="password-icon" onClick={togglePassword}>
+                    <i
+                      className={`fa-solid ${
+                        showPass ? "fa-eye " : "fa-eye-slash"
+                      }`}
+                    ></i>
+                  </span>
                 </div>
               </div>
               {/* Will add below features later */}

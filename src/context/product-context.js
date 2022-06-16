@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { productReducer } from "../reducer/productReducer";
 import { INITIAL_DATA, INITIALIZE_CATEGORY } from "../utils/constants";
-import axios from "axios";
+import { getAllProductService, getAllCategoriesService } from "../services";
 
 const ProductContext = createContext();
 
@@ -19,13 +19,13 @@ const ProductProvider = ({ children }) => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.get("/api/products");
+        const { data } = await getAllProductService();
         productDispatch({
           type: INITIAL_DATA,
           payload: data.products,
         });
       } catch (error) {
-        console.log("Error in fetching initial data", error);
+        console.error("Error in fetching initial data", error);
       }
     })();
   }, []);
@@ -33,13 +33,13 @@ const ProductProvider = ({ children }) => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.get("/api/categories");
+        const { data } = await getAllCategoriesService();
         productDispatch({
           type: INITIALIZE_CATEGORY,
           payload: data.categories,
         });
       } catch (error) {
-        console.log("Error in fetching categories", error);
+        console.error("Error in fetching categories", error);
       }
     })();
   }, []);

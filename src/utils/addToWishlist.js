@@ -1,7 +1,16 @@
 import { ADD_TO_WISHLIST } from "./constants";
-export const addToWishlist = (product, productDispatch) => {
-  return productDispatch({
-    type: ADD_TO_WISHLIST,
-    payload: product,
-  });
+import { addItemToWishlistService } from "../services";
+
+export const addToWishlist = async (product, productDispatch, token) => {
+  try {
+    const {
+      data: { wishlist },
+    } = await addItemToWishlistService({ product, token });
+    productDispatch({
+      type: ADD_TO_WISHLIST,
+      payload: wishlist,
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };

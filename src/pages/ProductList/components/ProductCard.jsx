@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useProduct } from "../../../context/product-context";
 import {
   removeFromWishlist,
@@ -5,7 +6,7 @@ import {
   getDiscountPercent,
   addToCart,
 } from "../../../utils";
-import { Link } from "react-router-dom";
+import { useAuth } from "../../../context/auth-context";
 
 export const ProductCard = ({ product }) => {
   const { productState, productDispatch } = useProduct();
@@ -15,6 +16,7 @@ export const ProductCard = ({ product }) => {
   );
 
   const inCart = cart.find((cartItem) => cartItem._id === product._id);
+  const { token } = useAuth();
 
   return (
     <div className="card ecomm-card">
@@ -30,8 +32,8 @@ export const ProductCard = ({ product }) => {
           className={`like-icon ${inWishlist ? "liked" : ""}`}
           onClick={() => {
             inWishlist
-              ? removeFromWishlist(product, productDispatch)
-              : addToWishlist(product, productDispatch);
+              ? removeFromWishlist(product._id, productDispatch, token)
+              : addToWishlist(product, productDispatch, token);
           }}
         >
           <i className="fas fa-heart"></i>
@@ -52,7 +54,7 @@ export const ProductCard = ({ product }) => {
           <button
             className="btn primary-btn-solid"
             onClick={() => {
-              addToCart(product, productDispatch);
+              addToCart(product, productDispatch, token);
             }}
           >
             Add to Cart

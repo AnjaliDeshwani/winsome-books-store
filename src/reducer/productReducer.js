@@ -1,32 +1,15 @@
-import {
-  INITIAL_DATA,
-  PRICE_CHANGE,
-  CATEGORY_CHANGE,
-  INITIALIZE_CATEGORY,
-  SORT_BY,
-  RATING_CHANGE,
-  CLEAR_ALL,
-  REMOVE_FROM_WISHLIST,
-  ADD_TO_WISHLIST,
-  ADD_TO_CART,
-  REMOVE_FROM_CART,
-  INC_QTY,
-  DEC_QTY,
-} from "../utils/constants";
+import * as constants from "../utils/constants";
 
 let initialData = [];
 let categoryData = {};
-let updatedWishlist = [];
-let updatedCart = [];
-let cartItemIndex;
 
 export const productReducer = (productState, action) => {
   switch (action.type) {
-    case INITIAL_DATA:
+    case constants.INITIAL_DATA:
       initialData = action.payload;
       return { ...productState, data: action.payload };
 
-    case INITIALIZE_CATEGORY:
+    case constants.INITIALIZE_CATEGORY:
       categoryData = action.payload.reduce(
         (catObj, catItem) => ({
           ...catObj,
@@ -41,13 +24,13 @@ export const productReducer = (productState, action) => {
         },
       };
 
-    case PRICE_CHANGE:
+    case constants.PRICE_CHANGE:
       return {
         ...productState,
         priceRange: action.payload,
       };
 
-    case CATEGORY_CHANGE:
+    case constants.CATEGORY_CHANGE:
       const newSelectedCategory = {
         ...productState.selectedCategory,
         ...action.payload,
@@ -57,19 +40,19 @@ export const productReducer = (productState, action) => {
         selectedCategory: newSelectedCategory,
       };
 
-    case SORT_BY:
+    case constants.SORT_BY:
       return {
         ...productState,
         sortBy: action.payload,
       };
 
-    case RATING_CHANGE:
+    case constants.RATING_CHANGE:
       return {
         ...productState,
         rating: action.payload,
       };
 
-    case CLEAR_ALL:
+    case constants.CLEAR_ALL:
       return {
         ...productState,
         data: [...initialData],
@@ -79,66 +62,37 @@ export const productReducer = (productState, action) => {
         rating: "",
       };
 
-    case REMOVE_FROM_WISHLIST:
-      updatedWishlist = productState.wishlist.filter(
-        (wishItem) => wishItem._id !== action.payload._id
-      );
-      return { ...productState, wishlist: updatedWishlist };
+    case constants.REMOVE_FROM_WISHLIST:
+      return { ...productState, wishlist: action.payload };
 
-    case ADD_TO_WISHLIST:
-      updatedWishlist = productState.wishlist.find(
-        (wishItem) => wishItem._id === action.payload._id
-      )
-        ? [...productState.wishlist]
-        : [...productState.wishlist, action.payload];
+    case constants.ADD_TO_WISHLIST:
       return {
         ...productState,
-        wishlist: updatedWishlist,
+        wishlist: action.payload,
       };
 
-    case ADD_TO_CART:
-      cartItemIndex = productState.cart.findIndex(
-        (cartItem) => cartItem._id === action.payload._id
-      );
-      updatedCart =
-        cartItemIndex === -1
-          ? [...productState.cart, { ...action.payload, qty: 1 }]
-          : [...productState.cart];
+    case constants.ADD_TO_CART:
       return {
         ...productState,
-        cart: updatedCart,
+        cart: [...action.payload],
       };
 
-    case REMOVE_FROM_CART:
-      updatedCart = productState.cart.filter(
-        (cartItem) => cartItem._id !== action.payload._id
-      );
+    case constants.REMOVE_FROM_CART:
       return {
         ...productState,
-        cart: updatedCart,
+        cart: [...action.payload],
       };
 
-    case INC_QTY:
-      updatedCart = productState.cart.map((cartItem) =>
-        cartItem._id === action.payload._id
-          ? { ...cartItem, qty: cartItem.qty + 1 }
-          : cartItem
-      );
-
+    case constants.INC_QTY:
       return {
         ...productState,
-        cart: updatedCart,
+        cart: [...action.payload],
       };
 
-    case DEC_QTY:
-      updatedCart = productState.cart.map((cartItem) =>
-        cartItem._id === action.payload._id
-          ? { ...cartItem, qty: cartItem.qty - 1 }
-          : cartItem
-      );
+    case constants.DEC_QTY:
       return {
         ...productState,
-        cart: updatedCart,
+        cart: [...action.payload],
       };
 
     default:

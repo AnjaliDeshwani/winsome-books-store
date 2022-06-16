@@ -9,6 +9,7 @@ export { addToCart } from "./addToCart";
 export { removeFromCart } from "./removeFromCart";
 export { moveToCart } from "./moveToCart";
 export { moveToWishlist } from "./moveToWishlist";
+export { updateCartItem } from "./updateCartItem";
 export {
   totalPrice,
   totalDiscount,

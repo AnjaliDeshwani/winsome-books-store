@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { loginService, singupService } from "../services/";
 
 const AuthContext = createContext();
 
@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
 
   const loginHandler = async (email, password) => {
     try {
-      const { data, status } = await axios.post("/api/auth/login", {
+      const { data, status } = await loginService({
         email,
         password,
       });
@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
         setAuthError("");
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
 
       setAuthError("The credentials you entered are invalid");
     }
@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
 
   const signUpHandler = async (firstName, lastName, email, password) => {
     try {
-      const { data, status } = await axios.post("/api/auth/signup", {
+      const { data, status } = await singupService({
         firstName,
         lastName,
         email,
@@ -65,7 +65,7 @@ const AuthProvider = ({ children }) => {
         setAuthError("");
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setAuthError("Email Already Exists.");
     }
   };

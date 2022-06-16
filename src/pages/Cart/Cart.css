@@ -91,6 +91,7 @@
   font-size: 1.2rem;
   background: none;
   border: 1px solid var(--dark-gray-color);
+  cursor: pointer;
 }
 
 .cart-options .qantity-value {

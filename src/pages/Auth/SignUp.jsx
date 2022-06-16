@@ -2,6 +2,7 @@ import "./Auth.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../context/auth-context";
+import { useShowPassword } from "../../Hooks/useShowPassword";
 
 export const SignUp = () => {
   const location = useLocation();
@@ -13,6 +14,8 @@ export const SignUp = () => {
     email: "",
     password: "",
   });
+
+  const { showPass, togglePassword } = useShowPassword();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -85,10 +88,10 @@ export const SignUp = () => {
                 </div>
               </div>
               <div className="auth-items">
-                <div className="input-group">
+                <div className="input-group password-div">
                   <label className="input-label">Password</label>
                   <input
-                    type="password"
+                    type={`${showPass ? "text" : "password"}`}
                     className="input-txt"
                     onChange={(e) =>
                       setSignUpForm({
@@ -98,6 +101,13 @@ export const SignUp = () => {
                     }
                     required
                   />
+                  <span className="password-icon" onClick={togglePassword}>
+                    <i
+                      className={`fa-solid ${
+                        showPass ? "fa-eye " : "fa-eye-slash"
+                      }`}
+                    ></i>
+                  </span>
                 </div>
               </div>
               {authError.length > 0 && (

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Wishlist.css";
 import { useProduct } from "../../context/product-context";
 import {
@@ -5,10 +6,13 @@ import {
   removeFromWishlist,
   moveToCart,
 } from "../../utils";
+import { useAuth } from "../../context/auth-context";
 
 export const Wishlist = () => {
   const { productState, productDispatch } = useProduct();
-  const { wishlist } = productState;
+  const { wishlist, cart } = productState;
+  const { token } = useAuth();
+
   return (
     <>
       <main className="wishlist-section">
@@ -24,6 +28,9 @@ export const Wishlist = () => {
             <div className="border-bottom"></div>
             <div className="wishlist-items-container">
               {wishlist.map((product) => {
+                const inCart = cart.find(
+                  (cartItem) => cartItem._id === product._id
+                );
                 return (
                   <div key={product._id}>
                     <div className="wishlist-item">
@@ -55,17 +62,32 @@ export const Wishlist = () => {
                       </div>
                       <div className="action-items">
                         <div className="move-to-cart">
-                          <button
-                            className="btn primary-btn-outline"
-                            onClick={() => moveToCart(product, productDispatch)}
-                          >
-                            Move To Cart
-                          </button>
+                          {inCart ? (
+                            <Link
+                              className="btn primary-btn-outline"
+                              to="/cart"
+                            >
+                              Already in Cart
+                            </Link>
+                          ) : (
+                            <button
+                              className="btn primary-btn-outline"
+                              onClick={() =>
+                                moveToCart(product, productDispatch, token)
+                              }
+                            >
+                              Move To Cart
+                            </button>
+                          )}
                         </div>
                         <div
                           className="delete-item"
                           onClick={() =>
-                            removeFromWishlist(product, productDispatch)
+                            removeFromWishlist(
+                              product._id,
+                              productDispatch,
+                              token
+                            )
                           }
                         >
                           <span className="delete-icon">

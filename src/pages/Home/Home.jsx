@@ -1,10 +1,10 @@
 import "./Home.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { useProduct } from "../../context/product-context";
 import { ProductVerticalCard } from "./ProductVerticalCard";
 import { CATEGORY_CHANGE } from "../../utils/constants";
+import { getAllCategoriesService } from "../../services";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -15,10 +15,10 @@ export const Home = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.get("/api/categories");
+        const { data } = await getAllCategoriesService();
         setCategoryData(data.categories);
       } catch (error) {
-        console.log("Error in fetching categories", error);
+        console.error("Error in fetching categories", error);
       }
     })();
   }, []);
@@ -26,7 +26,7 @@ export const Home = () => {
   const showCategoryBooks = (categoryName) => {
     return data
       .filter((item) => item.categoryName === categoryName)
-      .map((item) => <ProductVerticalCard product={item} />);
+      .map((item) => <ProductVerticalCard product={item} key={item._id} />);
   };
 
   const showByCategory = (categoryName) => {
