@@ -1,3 +1,4 @@
+import { toast } from "react-hot-toast";
 import { ADD_TO_WISHLIST } from "./constants";
 import { addItemToWishlistService } from "../services";
 
@@ -10,6 +11,7 @@ export const addToWishlist = async (product, productDispatch, token) => {
       type: ADD_TO_WISHLIST,
       payload: wishlist,
     });
+    toast.success("Product added to Wishlist!");
   } catch (error) {
     console.error(error);
   }

@@ -14,11 +14,19 @@ import {
 } from "./pages";
 import { Header, Footer } from "./components";
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
       <div className="app-container">
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          containerStyle={{
+            top: "4rem",
+          }}
+        />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

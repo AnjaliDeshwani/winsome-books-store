@@ -3,6 +3,9 @@
   width: 100%;
   background-color: var(--primary-color);
   padding: 1rem;
+  position: fixed;
+  inset: 0;
+  z-index: 5;
 }
 .header .navbar {
   display: flex;

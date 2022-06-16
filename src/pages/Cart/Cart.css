@@ -4,7 +4,7 @@
   gap: 3rem;
   width: 80%;
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 7.5rem;
 }
 
 .border-bottom {
@@ -178,4 +178,5 @@
   flex-direction: column;
   align-items: center;
   margin: 1rem;
+  margin-top: 5.5rem;
 }
