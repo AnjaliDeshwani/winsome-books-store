@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  gap: 10rem;
 }
 
 .navbar-right {
@@ -29,26 +30,6 @@
 
 .navbar .navbar-brand .navbar-brand-logo {
   width: 2.5rem;
-}
-
-.header .navbar .search-container {
-  display: flex;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 5px;
-  flex-basis: 25rem;
-  padding: 2px 4px;
-  background: #fff;
-}
-
-.header .navbar .search-container:focus-within {
-  border-width: 2px;
-}
-
-.header .navbar .search-container .search-bar {
-  border: none;
-  outline: none;
-  background: none;
 }
 
 .shop-now-btn {

@@ -4,6 +4,7 @@ import {
   getPriceRangeData,
   getSortedData,
   getRatedData,
+  getSearchedData,
 } from "../utils";
 
 export const useFilterHook = () => {
@@ -11,6 +12,7 @@ export const useFilterHook = () => {
 
   let filteredData = [...productState.data];
 
+  filteredData = getSearchedData(filteredData, productState.searchText);
   filteredData = getPriceRangeData(filteredData, productState.priceRange);
   filteredData = getCategoryData(filteredData, productState.selectedCategory);
   filteredData = getSortedData(filteredData, productState.sortBy);

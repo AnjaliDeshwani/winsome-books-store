@@ -13,6 +13,7 @@ const ADD_TO_CART = "ADD_TO_CART";
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 const INC_QTY = "INC_QTY";
 const DEC_QTY = "DEC_QTY";
+const SEARCH = "SEARCH";
 
 export {
   INITIAL_DATA,
@@ -30,4 +31,5 @@ export {
   REMOVE_FROM_CART,
   INC_QTY,
   DEC_QTY,
+  SEARCH,
 };

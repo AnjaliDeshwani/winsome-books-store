@@ -95,6 +95,12 @@ export const productReducer = (productState, action) => {
         cart: [...action.payload],
       };
 
+    case constants.SEARCH:
+      return {
+        ...productState,
+        searchText: action.payload,
+      };
+
     default:
       return productState;
   }

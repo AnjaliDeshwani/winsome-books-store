@@ -29,7 +29,6 @@ export const Login = () => {
     }
   });
 
-  console.log(loading);
   return (
     <>
       {loading ? (

@@ -3,12 +3,12 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { useProduct } from "../../context/product-context";
 import { useAuth } from "../../context/auth-context";
-import { UserAvatar } from "../UserAvatar/UserAvatar";
+import { UserAvatar, SearchBar } from "../index";
 
 export const Header = () => {
   const { productState } = useProduct();
   const { wishlist, cart } = productState;
-  const { token, loginUser } = useAuth();
+  const { token } = useAuth();
   return (
     <>
       <header className="header">
@@ -17,16 +17,7 @@ export const Header = () => {
             <img className="navbar-brand-logo" src={logo} alt="logo" />
             <h2 className="navbar-brand-heading">WINSOME BOOKS</h2>
           </Link>
-
-          <div className="search-container">
-            <input
-              type="text"
-              className="search-bar input-txt"
-              placeholder="Type to search"
-            />
-            <i className="fa fa-search" aria-hidden="true"></i>
-          </div>
-
+          <SearchBar />
           <div className="navbar-right">
             <Link to="/product-list" className="shop-now-btn">
               Shop Now

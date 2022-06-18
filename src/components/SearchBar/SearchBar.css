@@ -1,0 +1,19 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px 4px;
+  background: #fff;
+  flex-grow: 1;
+}
+
+.search-container:focus-within {
+  border-width: 2px;
+}
+
+.search-container .search-bar {
+  border: none;
+  outline: none;
+  background: none;
+}

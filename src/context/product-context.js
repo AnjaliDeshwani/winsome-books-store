@@ -14,6 +14,7 @@ const ProductProvider = ({ children }) => {
     rating: "",
     wishlist: [],
     cart: [],
+    searchText: "",
   });
 
   useEffect(() => {

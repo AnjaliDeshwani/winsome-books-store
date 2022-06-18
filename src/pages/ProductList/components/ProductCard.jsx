@@ -49,7 +49,7 @@ export const ProductCard = ({ product }) => {
           </div>
           <div className="card-rating">
             <span>{product.rating}</span>
-            <i class="fa fa-star"></i>
+            <i className="fa fa-star"></i>
           </div>
         </div>
         {inCart ? (

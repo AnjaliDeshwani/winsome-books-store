@@ -37,7 +37,7 @@ export const SingleProduct = () => {
             <h2 className="card-title">{currentProduct.title}</h2>
             <div className="card-rating">
               <span>{currentProduct.rating}</span>
-              <i class="fa fa-star"></i>
+              <i className="fa fa-star"></i>
             </div>
             <div className="card-price">
               <span className="price-now pl-0-5">

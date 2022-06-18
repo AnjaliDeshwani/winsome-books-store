@@ -3,17 +3,21 @@ import { useState, useEffect } from "react";
 import { Filters, ProductCard } from "./components";
 import { useFilterHook } from "../../Hooks/FilterHooks";
 import { Loader } from "../../components";
+import { useProduct } from "../../context/product-context";
 
 export const ProductList = () => {
   const { filteredData } = useFilterHook();
   const [loading, setLoading] = useState(false);
+  const {
+    productState: { searchText },
+  } = useProduct();
 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
-  }, []);
+  }, [searchText]);
 
   return (
     <>
