@@ -7,7 +7,7 @@ export const Cart = () => {
   const { productState } = useProduct();
   const { cart } = productState;
   return (
-    <>
+    <main className="main-cart-section">
       {!cart.length ? (
         <div className="empty-container">
           <div className="empty-info">
@@ -21,7 +21,7 @@ export const Cart = () => {
           </Link>
         </div>
       ) : (
-        <main className="main-cart-section">
+        <div className="cart-body">
           <div className="cart-product-section">
             <div className="cart-header">
               <h3>My Cart</h3>
@@ -43,12 +43,14 @@ export const Cart = () => {
             <CartProduct />
 
             <div className="cart-bottom">
-              <button className="btn primary-btn-solid">Place Order</button>
+              <button className="btn primary-btn-solid font-bold">
+                Place Order
+              </button>
             </div>
           </div>
           <PriceDetail />
-        </main>
+        </div>
       )}
-    </>
+    </main>
   );
 };

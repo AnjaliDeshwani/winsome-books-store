@@ -6,3 +6,4 @@ export { SignUp } from "./Auth/SignUp";
 export { Wishlist } from "./Wishlist/Wishlist";
 export { PageNotFound } from "./PageNotFound/PageNotFound";
 export { Profile } from "./Profile/Profile";
+export { SingleProduct } from "./SingleProduct/SingleProduct";

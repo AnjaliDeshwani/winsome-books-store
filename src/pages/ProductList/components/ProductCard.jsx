@@ -19,7 +19,7 @@ export const ProductCard = ({ product }) => {
   const { token } = useAuth();
 
   return (
-    <div className="card ecomm-card">
+    <Link to={`/singleProduct/${product._id}`} className="card ecomm-card">
       <div className="card-head">
         <div className="image-badge-div">
           <img src={product.img} alt="card-pic" className="product-image" />
@@ -39,12 +39,18 @@ export const ProductCard = ({ product }) => {
           <i className="fas fa-heart"></i>
         </button>
         <div className="card-text">{product.author}</div>
-        <div className="card-price">
-          <span className="price-now">₹{product.discountedPrice}</span>
-          <span className="price-before">₹{product.price}</span>
-          <span className="discount">
-            {getDiscountPercent(product.price, product.discountedPrice)}%
-          </span>
+        <div className="card-bottom">
+          <div className="card-price">
+            <span className="price-now pl-0-5">₹{product.discountedPrice}</span>
+            <span className="price-before pl-0-5">₹{product.price}</span>
+            <span className="discount pl-0-5">
+              {getDiscountPercent(product.price, product.discountedPrice)}%
+            </span>
+          </div>
+          <div className="card-rating">
+            <span>{product.rating}</span>
+            <i class="fa fa-star"></i>
+          </div>
         </div>
         {inCart ? (
           <Link className="btn primary-btn-solid text-center" to="/cart">
@@ -61,6 +67,6 @@ export const ProductCard = ({ product }) => {
           </button>
         )}
       </div>
-    </div>
+    </Link>
   );
 };

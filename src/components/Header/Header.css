@@ -10,11 +10,17 @@
 .header .navbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
 }
 
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
 .header .navbar .navbar-brand {
-  width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,42 +33,37 @@
 
 .header .navbar .search-container {
   display: flex;
-  width: 50%;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  flex-basis: 25rem;
+  padding: 2px 4px;
+  background: #fff;
+}
+
+.header .navbar .search-container:focus-within {
+  border-width: 2px;
 }
 
 .header .navbar .search-container .search-bar {
   border: none;
   outline: none;
+  background: none;
 }
 
-.header .navbar .search-container .input-txt {
-  width: 80%;
-  margin-left: 1rem;
-}
-
-.header .navbar .search-container .search-btn {
-  display: flex;
-  align-items: center;
-  border-radius: 0 5px 5px 0px;
+.shop-now-btn {
+  border-radius: 5px;
   color: var(--white-color);
   background-color: var(--black-color);
-}
-
-.header .navbar .nav-list {
-  width: 30%;
-  margin-left: 10rem;
-}
-
-.header .nav-list .spaced-list {
-  justify-content: flex-end;
+  padding: 8px 10px;
 }
 .nav-item:hover {
-  transform: scale(1.1);
+  transform: none;
 }
 
 .header .navbar .nav-list .nav-item {
-  padding: 12px 16px;
-  transition: transform 0.2s ease;
+  padding: 12px 9px;
+  font-size: 1.2rem;
 }
 
 .badge-wrapper {
@@ -72,4 +73,5 @@
 .badge-count {
   top: -13px;
   background-color: var(--white-color);
+  padding: 9px;
 }

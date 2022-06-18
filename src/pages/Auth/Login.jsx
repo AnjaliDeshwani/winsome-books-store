@@ -73,16 +73,6 @@ export const Login = () => {
                   </span>
                 </div>
               </div>
-              {/* Will add below features later */}
-              {/* <div className="auth-items checkbox-item">
-                <div className="select-input">
-                  <input type="checkbox" className="remember-checkbox" />
-                  Remember Me
-                </div>
-                <Link to="" className="auth-link">
-                  Forgot your Password?
-                </Link>
-              </div> */}
 
               {authError.length > 0 && (
                 <div className="auth-error">{authError}</div>

@@ -13,7 +13,7 @@ export const products = [
     author: "Jay Shetty",
     price: "399",
     discountedPrice: "359",
-    rating: "3.5",
+    rating: "3",
     categoryName: "Non-Fiction",
   },
   {
@@ -73,7 +73,7 @@ export const products = [
     author: "Paulo Coelho",
     price: "500",
     discountedPrice: "450",
-    rating: "4.5",
+    rating: "4",
     categoryName: "Fiction",
   },
   {

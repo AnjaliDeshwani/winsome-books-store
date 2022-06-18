@@ -1,6 +1,7 @@
 import "./App.css";
 import "./responsive.css";
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Mockman from "mockman-js";
 import {
   Home,
@@ -11,11 +12,11 @@ import {
   SignUp,
   PageNotFound,
   Profile,
+  SingleProduct,
 } from "./pages";
 import { Header, Footer } from "./components";
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
-import { Toaster } from "react-hot-toast";
-
+import { ResetScroll } from "./components";
 function App() {
   return (
     <>
@@ -28,33 +29,39 @@ function App() {
           }}
         />
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product-list" element={<ProductList />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/mock" element={<Mockman />} />
-          <Route path="*" element={<PageNotFound />} />
-          <Route
-            path="/cart"
-            element={
-              <PrivateRoute>
-                <Cart />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/wishlist"
-            element={
-              <PrivateRoute>
-                <Wishlist />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
+        <ResetScroll>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product-list" element={<ProductList />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/mock" element={<Mockman />} />
+            <Route path="*" element={<PageNotFound />} />
+            <Route
+              path="/singleProduct/:productId"
+              element={<SingleProduct />}
+            />
+            <Route
+              path="/cart"
+              element={
+                <PrivateRoute>
+                  <Cart />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/wishlist"
+              element={
+                <PrivateRoute>
+                  <Wishlist />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </ResetScroll>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

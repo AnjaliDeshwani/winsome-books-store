@@ -14,8 +14,8 @@ export const Wishlist = () => {
   const { token } = useAuth();
 
   return (
-    <>
-      <main className="wishlist-section">
+    <main className="wishlist-section">
+      <div className="wishlist-container">
         {!wishlist.length ? (
           <div className="empty-info">
             Empty Wishlist. You have no items in your wishlist. Start adding!
@@ -41,7 +41,10 @@ export const Wishlist = () => {
                           alt="product"
                         />
                       </div>
-                      <div className="item-details">
+                      <Link
+                        to={`/singleProduct/${product._id}`}
+                        className="item-details"
+                      >
                         <div className="item-title">{product.title}</div>
                         <div className="item-subtitle">By {product.author}</div>
                         <div className="card-price">
@@ -59,7 +62,7 @@ export const Wishlist = () => {
                             %
                           </span>
                         </div>
-                      </div>
+                      </Link>
                       <div className="action-items">
                         <div className="move-to-cart">
                           {inCart ? (
@@ -103,7 +106,7 @@ export const Wishlist = () => {
             </div>
           </div>
         )}
-      </main>
-    </>
+      </div>
+    </main>
   );
 };

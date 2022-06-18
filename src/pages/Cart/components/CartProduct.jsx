@@ -29,7 +29,10 @@ export const CartProduct = () => {
                 <div className="item-image">
                   <img className="responsive-img" src={img} alt="product" />
                 </div>
-                <div className="item-details">
+                <Link
+                  to={`/singleProduct/${product._id}`}
+                  className="item-details"
+                >
                   <div className="item-title">{title}</div>
                   <div className="item-subtitle">{author}</div>
                   <div className="card-price">
@@ -46,7 +49,7 @@ export const CartProduct = () => {
                   <div className="coupon-details font-bold">
                     No coupons & offers applied
                   </div>
-                </div>
+                </Link>
                 <div className="delivery-info font-bold">
                   Delivery by Mon Apr 4{" "}
                 </div>
@@ -71,12 +74,12 @@ export const CartProduct = () => {
                 </div>
                 <div className="cart-actions">
                   {inWishlist ? (
-                    <Link className="link-btn" to="/wishlist">
+                    <Link className="btn primary-btn-outline" to="/wishlist">
                       Already in Wishlist
                     </Link>
                   ) : (
                     <div
-                      className="link-btn"
+                      className="btn primary-btn-outline"
                       onClick={() =>
                         moveToWishlist(product, productDispatch, token)
                       }
@@ -85,7 +88,7 @@ export const CartProduct = () => {
                     </div>
                   )}
                   <div
-                    className="link-btn"
+                    className="btn primary-btn-outline"
                     onClick={() =>
                       removeFromCart(product._id, productDispatch, token)
                     }

@@ -27,3 +27,22 @@
   color: var(--red-color);
   opacity: 1;
 }
+
+/*** Product Card Stylings ***/
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-rating {
+  background-color: var(--yellow-color);
+  color: #fff;
+  padding: 5px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: bold;
+}

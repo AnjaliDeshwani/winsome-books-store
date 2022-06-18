@@ -1,4 +1,8 @@
 .main-cart-section {
+  flex-grow: 1;
+}
+
+.cart-body {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
@@ -179,4 +183,5 @@
   align-items: center;
   margin: 1rem;
   margin-top: 5.5rem;
+  flex-grow: 1;
 }

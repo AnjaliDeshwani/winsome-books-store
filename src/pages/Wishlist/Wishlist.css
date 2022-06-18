@@ -1,9 +1,13 @@
 .wishlist-section {
+  margin-top: 7.5rem;
+  flex-grow: 1;
+}
+
+.wishlist-container {
   display: flex;
   flex-direction: column;
   width: 60%;
   margin: 0 auto;
-  margin-top: 7.5rem;
   box-shadow: 0 0 4px 0px var(--dark-gray-color);
 }
 

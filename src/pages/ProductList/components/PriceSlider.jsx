@@ -10,7 +10,7 @@ export const PriceSlider = () => {
           className="slider"
           id="sliderRange"
           type="range"
-          min="1"
+          min="100"
           max="1000"
           value={productState.priceRange}
           onChange={(e) =>
@@ -20,7 +20,10 @@ export const PriceSlider = () => {
             })
           }
         />
-        <div className="slider-value">{productState.priceRange}</div>
+        <div className="slider-value">
+          Products within ₹
+          <span className="fw-600">{productState.priceRange}</span>
+        </div>
       </div>
     </div>
   );

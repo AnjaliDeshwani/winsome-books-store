@@ -1,8 +1,5 @@
 export { loginService, singupService } from "./authServices";
-export {
-  getAllProductService,
-  getSingleProductService,
-} from "./productServices";
+export { getAllProductService } from "./productServices";
 export {
   getAllCategoriesService,
   getSingleCategoryService,
