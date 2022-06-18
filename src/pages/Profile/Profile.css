@@ -6,9 +6,9 @@
 .profile-container {
   display: flex;
   flex-direction: column;
-  width: 40%;
   margin: 0 auto;
   box-shadow: 0 0 4px 0px var(--dark-gray-color);
+  max-width: 25rem;
 }
 
 .profile-section .profile-header {
@@ -17,9 +17,9 @@
 
 .profile-section .profile-body {
   display: flex;
-  flex-direction: column;
   gap: 2rem;
   margin: 1rem 1.2rem;
+  padding: 1rem;
 }
 
 .profile-body .profile-item {
@@ -27,6 +27,19 @@
   gap: 1rem;
 }
 
-.profile-body .logout-btn {
-  margin-left: auto;
+.profile-body .avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logout-btn {
+  align-self: center;
+  width: 10rem;
+  margin: 1rem;
 }

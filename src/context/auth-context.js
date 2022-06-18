@@ -10,13 +10,16 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(loginDetails?.token);
   const [loginUser, setLoginUser] = useState(loginDetails?.loginUser);
   const [authError, setAuthError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const loginHandler = async (email, password) => {
     try {
+      setLoading(true);
       const { data, status } = await loginService({
         email,
         password,
       });
+      setLoading(false);
       if (status === 201 || status === 200) {
         localStorage.setItem(
           "loginDetails",
@@ -46,12 +49,14 @@ const AuthProvider = ({ children }) => {
 
   const signUpHandler = async (firstName, lastName, email, password) => {
     try {
+      setLoading(true);
       const { data, status } = await singupService({
         firstName,
         lastName,
         email,
         password,
       });
+      setLoading(false);
       if (status === 201) {
         localStorage.setItem(
           "loginDetails",
@@ -79,6 +84,7 @@ const AuthProvider = ({ children }) => {
         logoutHandler,
         signUpHandler,
         authError,
+        loading,
       }}
     >
       {children}

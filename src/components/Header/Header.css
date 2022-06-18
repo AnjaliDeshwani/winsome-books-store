@@ -63,7 +63,7 @@
 
 .header .navbar .nav-list .nav-item {
   padding: 12px 9px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .badge-wrapper {
@@ -73,5 +73,10 @@
 .badge-count {
   top: -13px;
   background-color: var(--white-color);
-  padding: 9px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.nav-list .spaced-list {
+  align-items: center;
 }

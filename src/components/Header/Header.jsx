@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { useProduct } from "../../context/product-context";
 import { useAuth } from "../../context/auth-context";
+import { UserAvatar } from "../UserAvatar/UserAvatar";
 
 export const Header = () => {
   const { productState } = useProduct();
@@ -60,15 +61,12 @@ export const Header = () => {
                   {!token ? (
                     <Link to="/login">
                       <span className="badge-wrapper">
-                        <i className="fas fa-user"></i>
+                        <i className="fas fa-user-large"></i>
                       </span>
-                      <span>Login</span>
                     </Link>
                   ) : (
                     <Link to="/profile">
-                      <span className="badge-wrapper">
-                        <i className="fa-solid fa-user-large"></i>
-                      </span>
+                      <UserAvatar />
                     </Link>
                   )}
                 </li>

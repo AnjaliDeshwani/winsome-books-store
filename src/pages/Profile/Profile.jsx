@@ -1,5 +1,6 @@
 import "./Profile.css";
 import { useAuth } from "../../context/auth-context";
+import { UserAvatar } from "../../components";
 
 export const Profile = () => {
   const { loginUser, logoutHandler } = useAuth();
@@ -7,27 +8,30 @@ export const Profile = () => {
     <main className="profile-section">
       <div className="profile-container">
         <div className="profile-header">
-          <h3>Profile Details</h3>
+          <h3>Profile</h3>
         </div>
         <div className="border-bottom"></div>
         <div className="profile-body">
-          <div className="profile-item">
-            <span className="font-bold">Name :</span>
-            <span className="">
-              {loginUser.firstName} {loginUser.lastName}
-            </span>
+          <UserAvatar />
+          <div className="profile-details">
+            <div className="profile-item">
+              <span className="font-bold">Name :</span>
+              <span className="">
+                {loginUser.firstName} {loginUser.lastName}
+              </span>
+            </div>
+            <div className="profile-item">
+              <span className="font-bold">Email :</span>
+              <span>{loginUser.email}</span>
+            </div>
           </div>
-          <div className="profile-item">
-            <span className="font-bold">Email :</span>
-            <span>{loginUser.email}</span>
-          </div>
-          <button
-            className="btn primary-btn-solid font-bold logout-btn"
-            onClick={logoutHandler}
-          >
-            Logout
-          </button>
         </div>
+        <button
+          className="btn primary-btn-solid font-bold logout-btn"
+          onClick={logoutHandler}
+        >
+          Logout
+        </button>
       </div>
     </main>
   );
