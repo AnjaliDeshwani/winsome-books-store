@@ -1,5 +1,4 @@
 import "./SearchBar.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProduct } from "../../context/product-context";
 import { SEARCH } from "../../utils/constants";
