@@ -27,17 +27,25 @@ export const ProductList = () => {
         <main className="main-products-section">
           <Filters />
           <div className="products-section">
-            <h3 className="product-heading">
-              Showing Products
-              <span className="product-heading-small text-grey text-regular">
-                (Showing {filteredData.length} of all products)
-              </span>
-            </h3>
-            <div className="product-list-grid">
-              {filteredData.map((product) => (
-                <ProductCard product={product} key={product._id} />
-              ))}
-            </div>
+            {filteredData.length > 0 ? (
+              <>
+                <h3 className="product-heading">
+                  Showing Products
+                  <span className="product-heading-small text-grey text-regular">
+                    (Showing {filteredData.length} of all products)
+                  </span>
+                </h3>
+                <div className="product-list-grid">
+                  {filteredData.map((product) => (
+                    <ProductCard product={product} key={product._id} />
+                  ))}
+                </div>
+              </>
+            ) : (
+              <h3 className="no-product">
+                Whoops! We don't have any products that match your preference :(
+              </h3>
+            )}
           </div>
         </main>
       )}

@@ -46,3 +46,9 @@
   gap: 2px;
   font-weight: bold;
 }
+
+.no-product {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
