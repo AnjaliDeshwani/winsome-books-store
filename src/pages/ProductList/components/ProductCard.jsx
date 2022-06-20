@@ -11,6 +11,7 @@ import { useAuth } from "../../../context/auth-context";
 export const ProductCard = ({ product }) => {
   const { productState, productDispatch } = useProduct();
   const { wishlist, cart } = productState;
+
   const inWishlist = wishlist.find(
     (wishlistItem) => wishlistItem._id === product._id
   );
@@ -30,10 +31,11 @@ export const ProductCard = ({ product }) => {
         <div className="card-title">{product.title}</div>
         <button
           className={`like-icon ${inWishlist ? "liked" : ""}`}
-          onClick={() => {
+          onClick={(e) => {
             inWishlist
               ? removeFromWishlist(product._id, productDispatch, token)
               : addToWishlist(product, productDispatch, token);
+            e.preventDefault();
           }}
         >
           <i className="fas fa-heart"></i>
@@ -59,8 +61,9 @@ export const ProductCard = ({ product }) => {
         ) : (
           <button
             className="btn primary-btn-solid"
-            onClick={() => {
+            onClick={(e) => {
               addToCart(product, productDispatch, token);
+              e.preventDefault();
             }}
           >
             Add to Cart
