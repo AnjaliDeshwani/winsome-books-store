@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useProduct } from "../../../context/product-context";
 import { totalPrice, totalDiscount, totalAmount } from "../../../utils";
 
@@ -37,6 +38,10 @@ export const PriceDetail = () => {
         <div className="footer-note font-semibold">
           You will save ₹{totalPrice(cart) - totalAmount(cart)} on this order
         </div>
+
+        <Link to="/checkout" className="btn primary-btn-solid font-bold">
+          Checkout
+        </Link>
       </div>
     </div>
   );

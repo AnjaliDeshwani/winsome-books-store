@@ -1,9 +1,6 @@
 export { loginService, singupService } from "./authServices";
 export { getAllProductService } from "./productServices";
-export {
-  getAllCategoriesService,
-  getSingleCategoryService,
-} from "./categoryServices";
+export { getAllCategoriesService } from "./categoryServices";
 export {
   getCartItemsService,
   addItemToCartService,
@@ -15,3 +12,4 @@ export {
   addItemToWishlistService,
   removeItemFromWishlistService,
 } from "./wishlistServices";
+export { getOrdersService, addOrdersService } from "./orderServices";

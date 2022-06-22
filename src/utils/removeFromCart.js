@@ -2,7 +2,12 @@ import { toast } from "react-hot-toast";
 import { REMOVE_FROM_CART } from "./constants";
 import { removeItemFromCartService } from "../services";
 
-export const removeFromCart = async (productId, productDispatch, token) => {
+export const removeFromCart = async (
+  productId,
+  productDispatch,
+  token,
+  clearCart
+) => {
   try {
     const {
       data: { cart },
@@ -11,7 +16,7 @@ export const removeFromCart = async (productId, productDispatch, token) => {
       type: REMOVE_FROM_CART,
       payload: cart,
     });
-    toast.success("Product removed from Cart!");
+    clearCart === false && toast.success("Product removed from Cart!");
   } catch (error) {
     console.error(error);
   }
