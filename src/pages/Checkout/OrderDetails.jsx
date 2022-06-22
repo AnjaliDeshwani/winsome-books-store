@@ -11,7 +11,6 @@ import {
   clearCart,
   addOrders,
 } from "../../utils";
-import { addOrdersService } from "../../services";
 
 export const OrderDetails = () => {
   const { productState, productDispatch } = useProduct();

@@ -17,7 +17,7 @@ export const OrderSummary = () => {
 
   useEffect(() => {
     order && particles();
-  }, []);
+  }, [order]);
 
   return (
     <div className="order-summary-section">
@@ -62,7 +62,7 @@ export const OrderSummary = () => {
                   const { img, price, title, qty } = product;
                   return (
                     <div className="single-product">
-                      <img src={img} className="product-img" />
+                      <img src={img} className="product-img" alt={title} />
                       <div className="single-product-right">
                         <div>{title}</div>
                         <div className="product-item">

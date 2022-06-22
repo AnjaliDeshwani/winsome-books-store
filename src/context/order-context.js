@@ -12,7 +12,7 @@ const OrderProvider = ({ children }) => {
     if (token) {
       getOrders(orderDispatch, token);
     }
-  }, []);
+  }, [token]);
   return (
     <OrderContext.Provider value={{ orderState, orderDispatch }}>
       {children}
