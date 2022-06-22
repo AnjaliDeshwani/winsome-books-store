@@ -51,7 +51,7 @@ export const OrderSummary = () => {
                 </div>
                 <div>
                   <span className="font-bold mr-0-5">Amount Paid:</span>
-                  <span>{amount}</span>
+                  <span>₹{amount}</span>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@ export const OrderSummary = () => {
                         <div>{title}</div>
                         <div className="product-item">
                           <span className="font-bold">Price:</span>
-                          <span>{price}</span>
+                          <span>₹{price}</span>
                         </div>
                         <div className="product-item">
                           <span className="font-bold">Qty:</span>
