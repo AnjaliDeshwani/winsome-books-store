@@ -8,7 +8,7 @@ export const Ratings = () => {
     <div className="filter-ratings filter-type">
       <div className="font-bold">Ratings</div>
       <ul className="list stacked-list">
-        {ratings.map((rating) => (
+        {ratings.reverse().map((rating) => (
           <li key={rating}>
             <label>
               <input
@@ -16,7 +16,7 @@ export const Ratings = () => {
                 name="rating"
                 checked={Number(productState.rating) === rating}
                 value={rating}
-                onMouseUp={(e) => {
+                onChange={(e) => {
                   productDispatch({
                     type: RATING_CHANGE,
                     payload: e.target.value,
